@@ -14,192 +14,192 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
     <style>
-        body {
-            background-color: #87d3c2; /* Background color */
-        }
+       body {
+    background-color: #87d3c2; /* Background color */
+}
 
-        /* Gradient Backgrounds */
-        header {
-            background: linear-gradient(90deg, rgba(59, 130, 246, 1) 0%, rgba(3, 105, 161, 1) 100%);
-        }
+/* Gradient Backgrounds */
+header {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 1) 0%, rgba(3, 105, 161, 1) 100%);
+}
 
-        footer {
-            background: linear-gradient(90deg, rgba(3, 105, 161, 1) 0%, rgba(59, 130, 246, 1) 100%);
-        }
+footer {
+    background: linear-gradient(90deg, rgba(3, 105, 161, 1) 0%, rgba(59, 130, 246, 1) 100%);
+}
 
-        .nav-button {
-            background-color: #3b82f6; /* Button color */
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease; /* Smooth transition */
-        }
+.nav-button {
+    background-color: #3b82f6; /* Button color */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
 
-        .nav-button:hover {
-            background-color: #2563eb; /* Darker shade on hover */
-        }
+.nav-button:hover {
+    background-color: #2563eb; /* Darker shade on hover */
+}
 
-        /* Center text for section titles */
-        .section-title {
-            margin-top: 2rem;
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #2d3748;
-            text-align: center;
-        }
+/* Center text for section titles */
+.section-title {
+    margin-top: 2rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2d3748;
+    text-align: center;
+}
 
-        /* Description styles */
-        .description {
-            margin-top: 1rem;
-            color: #4a5568; /* Dark gray */
-        }
+/* Description styles */
+.description {
+    margin-top: 1rem;
+    color: #4a5568; /* Dark gray */
+}
 
-        /* Hover effect for tech stack items */
-        .tech-stack img {
-            transition: transform 0.3s ease;
-        }
+/* Hover effect for tech stack items */
+.tech-stack img {
+    transition: transform 0.3s ease;
+}
 
-        .tech-stack img:hover {
-            transform: scale(1.1);
-        }
+.tech-stack img:hover {
+    transform: scale(1.1);
+}
 
-        /* Slide-in-right Animation */
-        @keyframes slideInRight {
-            0% {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+/* Slide-in-right Animation */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-        .slide-in-right {
-            opacity: 0;
-            animation: slideInRight 0.8s forwards;
-        }
+.slide-in-right {
+    opacity: 0;
+    animation: slideInRight 0.8s forwards;
+}
 
-        /* Slick Slider Styles */
-        .slick-slider {
-            min-width: 0;
-        }
+/* Slick Slider Styles */
+.slick-slider {
+    min-width: 0;
+}
 
-        .slick-list {
-            overflow: hidden;
-        }
+.slick-list {
+    overflow: hidden;
+}
 
-        .slick-track {
-            display: flex;
-            align-items: flex-start;
-        }
+.slick-track {
+    display: flex;
+    align-items: flex-start;
+}
 
-        .slider {
-            position: relative;
-            padding: 0px 60px;
-        }
+.slider {
+    position: relative;
+    padding: 0px 60px;
+}
 
-        /* Custom arrow styles */
-        .slider .slick-arrow {
-            position: absolute;
-            top: 50%;
-            z-index: 10;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            cursor: pointer;
-        }
+/* Custom arrow styles */
+.slider .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+}
 
-        .slider .slick-arrow.slick-prev {
-            left: -45px;
-        }
+.slider .slick-arrow.slick-prev {
+    left: -45px;
+}
 
-        .slider .slick-arrow.slick-next {
-            right: -45px;
-        }
+.slider .slick-arrow.slick-next {
+    right: -45px;
+}
 
-        .slider__item {
-            padding: 0px 15px;
-        }
+.slider__item {
+    padding: 0px 15px;
+}
 
-        .slider__item img {
-            max-width: 100%;
-        }
+.slider__item img {
+    max-width: 100%;
+}
 
-        /* Project Image Style */
-        .project-image {
-            width: 100%;
-            max-width: 250px; /* Enlarged project image */
-            height: auto;
-            margin-right: 20px;
-            border-radius: 10px;
-        }
+/* Project Image Style */
+.project-image {
+    width: 100%;
+    max-width: 250px; /* Enlarged project image */
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+}
 
-        /* Project card layout */
-        .project-card {
-            display: flex;
-            align-items: flex-start;
-            background-color: #b2f5ea; /* Same as contact section */
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 90%; /* Enlarged project cards */
-        }
+/* Project card layout */
+.project-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: #e6ccf2; /* Light shade of purple */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%; /* Enlarged project cards */
+}
 
-        /* Responsiveness for smaller screens */
-        @media (max-width: 768px) {
-            .slider .slick-arrow {
-                width: 30px;
-                height: 30px;
-                font-size: 16px;
-            }
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .slider .slick-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
 
-            .project-card {
-                flex-direction: column;
-                text-align: center;
-            }
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+    }
 
-            .project-image {
-                margin: 0 auto 20px auto;
-            }
-        }
+    .project-image {
+        margin: 0 auto 20px auto;
+    }
+}
 
-        /* Enlarging the main div */
-        .main-content {
-            max-width: 90%; /* Enlarged width */
-            margin: 0 auto;
-        }
+/* Enlarging the main div */
+.main-content {
+    max-width: 90%; /* Enlarged width */
+    margin: 0 auto;
+}
 
-        /* Enlarged project section */
-        .project-section {
-            width: 100%;
-            max-width: 1000px; /* Wider project section */
-            margin: 0 auto;
-        }
+/* Enlarged project section */
+.project-section {
+    width: 100%;
+    max-width: 1000px; /* Wider project section */
+}
 
-        /* Reduced margin for profile image */
-        .profile-picture {
-            margin-right: 10px; /* Reduced right margin */
-        }
+/* Reduced margin for profile image */
+.profile-picture {
+    margin-right: 10px; /* Reduced right margin */
+}
 
-        /* Space below header */
-        .header-space {
-            margin-bottom: 2rem; /* Adjust space as needed */
-        }
+/* Space below header */
+.header-space {
+    margin-bottom: 2rem; /* Adjust space as needed */
+}
 
-        /* Logo style */
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white; /* Logo color */
-            margin-right: auto; /* Push other items to the right */
-            padding-left: 10px; /* Padding for logo */
-        }
+/* Logo style */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Logo color */
+    margin-right: auto; /* Push other items to the right */
+    padding-left: 10px; /* Padding for logo */
+}
+
     </style>
 </head>
 

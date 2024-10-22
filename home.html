@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridvik Mallapureddy Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Include Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <style>
+        body {
+            background-color: #87d3c2; /* Background color */
+        }
+
+        /* Gradient Backgrounds */
+        header {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 1) 0%, rgba(3, 105, 161, 1) 100%);
+        }
+
+        footer {
+            background: linear-gradient(90deg, rgba(3, 105, 161, 1) 0%, rgba(59, 130, 246, 1) 100%);
+        }
+
+        .nav-button {
+            background-color: #3b82f6; /* Button color */
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        .nav-button:hover {
+            background-color: #2563eb; /* Darker shade on hover */
+        }
+
+        /* Center text for section titles */
+        .section-title {
+            margin-top: 2rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #2d3748;
+            text-align: center;
+        }
+
+        /* Description styles */
+        .description {
+            margin-top: 1rem;
+            color: #4a5568; /* Dark gray */
+        }
+
+        /* Hover effect for tech stack items */
+        .tech-stack img {
+            transition: transform 0.3s ease;
+        }
+
+        .tech-stack img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Slide-in-right Animation */
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            animation: slideInRight 0.8s forwards;
+        }
+
+        /* Slick Slider Styles */
+        .slick-slider {
+            min-width: 0;
+        }
+
+        .slick-list {
+            overflow: hidden;
+        }
+
+        .slick-track {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .slider {
+            position: relative;
+            padding: 0px 60px;
+        }
+
+        /* Custom arrow styles */
+        .slider .slick-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .slider .slick-arrow.slick-prev {
+            left: -45px;
+        }
+
+        .slider .slick-arrow.slick-next {
+            right: -45px;
+        }
+
+        .slider__item {
+            padding: 0px 15px;
+        }
+
+        .slider__item img {
+            max-width: 100%;
+        }
+
+        /* Project Image Style */
+        .project-image {
+            width: 100%;
+            max-width: 250px; /* Enlarged project image */
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        /* Project card layout */
+        .project-card {
+            display: flex;
+            align-items: flex-start;
+            background-color: #b2f5ea; /* Same as contact section */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%; /* Enlarged project cards */
+        }
+
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .slider .slick-arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .project-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-image {
+                margin: 0 auto 20px auto;
+            }
+        }
+
+        /* Enlarging the main div */
+        .main-content {
+            max-width: 90%; /* Enlarged width */
+            margin: 0 auto;
+        }
+
+        /* Enlarged project section */
+        .project-section {
+            width: 100%;
+            max-width: 1000px; /* Wider project section */
+            margin: 0 auto;
+        }
+
+        /* Reduced margin for profile image */
+        .profile-picture {
+            margin-right: 10px; /* Reduced right margin */
+        }
+
+        /* Space below header */
+        .header-space {
+            margin-bottom: 2rem; /* Adjust space as needed */
+        }
+
+        /* Logo style */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white; /* Logo color */
+            margin-right: auto; /* Push other items to the right */
+            padding-left: 10px; /* Padding for logo */
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center">
+    <!-- Navbar -->
+    <header class="w-full py-4 sticky top-0 z-10 flex items-center header-space">
+        <div class="logo">Ridvik Mallapureddy</div>
+        <div class="container mx-auto flex justify-end space-x-4 pr-10">
+            <a href="#description" class="nav-button text-white">About</a>
+            <a href="#projects" class="nav-button text-white">Projects</a>
+            <a href="https://www.linkedin.com/in/ridvik-m/" target="_blank"><button class="nav-button text-white">LinkedIn</button></a>
+            <a href="https://drive.google.com/file/d/1qQhc173wJFu5Y4qoliPznTocMVG9s1cS/view?pli=1" target="_blank"><button class="nav-button text-white">Resume</button></a>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <div class="main-content bg-white shadow-lg rounded-lg overflow-hidden w-11/12 max-w-7xl mx-auto mt-10 p-6 fade-in">
+        <div class="flex flex-col sm:flex-row">
+            <!-- Profile Image -->
+            <div class="w-full sm:w-1/3 flex justify-center sm:justify-start mb-4 sm:mb-0">
+                <img src="picture.jpeg" alt="Profile Picture" class="rounded-md object-cover w-52 h-52 profile-picture">
+            </div>
+
+            <!-- Contact Info -->
+            <div class="flex-1 sm:pl-6 contact-info">
+                <div class="border-2 border-black p-4 rounded-lg bg-teal-200 shadow-lg fade-in">
+                    <p class="text-xl font-semibold">Ridvik Mallapureddy</p>
+                    <p class="text-md font-medium text-gray-700">Business Intelligence Developer</p>
+                    <p class="text-md mt-2">
+                        <a href="tel:7032635442" class="text-blue-500">7032635442</a>
+                    </p>
+                    <p class="text-md">
+                        <a href="mailto:ridvik97@gmail.com" class="text-blue-500">ridvik97@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div id="description" class="mt-6 description fade-in">
+            <p class="text-gray-800 text-justify leading-relaxed">
+                I am an experienced Business Intelligence Developer with over 3 years of expertise in data analytics, specializing in transforming complex data into actionable insights. My proficiency in Power BI, SQL, and data modeling has driven impactful solutions across industries such as Retail, Manufacturing, Education, and Finance. I excel at designing scalable data models, including star and snowflake schemas, and developing dynamic dashboards using tools like Power BI, Cognos, and QuickSight. I’m passionate about optimizing data workflows and ETL processes with tools like SSIS and Azure Data Factory, ensuring seamless data integration and transformation. With a strong focus on SQL query optimization and performance tuning, I manage large-scale datasets to improve operational efficiency and enhance business decision-making. I thrive on using data to drive strategic insights and build solutions that empower organizations to make informed, data-driven decisions.
+            </p>
+        </div>
+
+        <!-- Tech Stack Section with Slider -->
+        <div class="section-title">My Tech Stack</div>
+        <div class="tech-stack fade-in-right">
+            <div class="slider">
+                <div class="slider__item">
+                    <img src="png-transparent-microsoft-azure-sql-database-microsoft-sql-server-azure-sql-data-warehouse-logo-text-logo-microsoft-azure-thumbnail.png" alt="Power BI" class="m-2" title="Power BI">
+                </div>
+                <div class="slider__item">
+                    <img src="images (1).png" alt="SQL" class="m-2" title="SQL">
+                </div>
+                <div class="slider__item">
+                    <img src="image_ff55d03003.png" alt="SSIS" class="m-2" title="SSIS">
+                </div>
+                <div class="slider__item">
+                    <img src="tableau2666.logowik.com.webp" alt="Azure Data Factory" class="m-2" title="Azure Data Factory">
+                </div>
+                <div class="slider__item">
+                    <img src="images.png" alt="Cognos" class="m-2" title="Cognos">
+                </div>
+                <div class="slider__item">
+                    <img src="images (3).png" alt="QuickSight" class="m-2" title="QuickSight">
+                </div>
+                <div class="slider__item">
+                    <img src="img000_adf01.jpg" alt="QuickSight" class="m-2" title="QuickSight">
+                </div>
+                <div class="slider__item">
+                    <img src="images (2).png" alt="QuickSight" class="m-2" title="QuickSight">
+                </div>
+                <div class="slider__item">
+                    <img src="dimensional-data-modeling-facts-and-dimensions-data-sleek.png.webp" alt="QuickSight" class="m-2" title="QuickSight">
+                </div>
+                <div class="slider__item">
+                    <img src="1695174921482.png" alt="QuickSight" class="m-2" title="QuickSight">
+                </div>
+                <div class="slider__item">
+                    <img src="IBM-Cognos-Analytics-2022-Logo-website-listing.webp" alt="QuickSight" class="m-2" title="QuickSight">
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="section-title">My Projects</div>
+        <div class="fade-in-right flex flex-col items-center project-section">
+
+            <!-- Project 1 -->
+            <div class="project-card bg-teal-200 shadow-md rounded-lg p-6 mb-4 w-11/12 sm:w-8/12 lg:w-10/12 slide-in-right">
+                <div class="flex items-center">
+                    <img src="WhatsApp Image 2024-10-19 at 1.03.59 PM.jpeg" alt="Project 1 Image" class="project-image">
+                    <div>
+                        <h5 class="text-gray-700">In my role on the project, I developed a real-time data processing system that integrated SharePoint with Power BI, reducing data latency by 30% and enhancing data-driven decision-making. I created custom refresh reports using Power Automate to facilitate on-demand data updates, ensuring a better user experience. I implemented trigger-based dataset refreshes to maintain real-time data accuracy and optimized database performance through table partitioning strategies, significantly reducing query times for large datasets. Additionally, I conducted a feasibility and compatibility assessment of Microsoft Fabric with Klein Tools' data infrastructure, focusing on pipelines, stored procedures, and lake-house capabilities. Lastly, I initiated a Sentiment Analysis Report that aggregates customer feedback from product pages on Home Depot and Amazon, providing valuable insights into customer satisfaction trends.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card bg-teal-200 shadow-md rounded-lg p-6 mb-4 w-11/12 sm:w-8/12 lg:w-10/12 slide-in-right">
+                <div class="flex items-center">
+                    <img src="WhatsApp Image 2024-10-19 at 1.03.59 PM (1).jpeg" alt="Project 2 Image" class="project-image">
+                    <div>
+                        <p class="text-gray-700">In my role, I generated ad-hoc Delinquency and Collections Reports in Tableau, providing insights into delinquent accounts, recovery rates, and overdue payment aging. I conducted a Spend Analysis by building dashboards to analyze customer spending patterns, which helped the marketing team refine their strategies. Additionally, I created ad-hoc reports in QuickSight to address specific business needs, implementing automated solutions with row-level security for distribution. I provided insights into customer credit utilization rates, supporting risk assessments and credit limit adjustments. Furthermore, I optimized existing datasets to reduce data source usage and analyzed SQL queries for improvement opportunities, demonstrating proficiency in writing T-SQL queries, views, and stored procedures while developing reusable shared datasets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card bg-teal-200 shadow-md rounded-lg p-6 mb-4 w-11/12 sm:w-8/12 lg:w-10/12 slide-in-right">
+                <div class="flex items-center">
+                    <img src="WhatsApp Image 2024-10-19 at 1.03.59 PM (2).jpeg" alt="Project 2 Image" class="project-image">
+                    <div>
+                        <p class="text-gray-700">In my role, I led the design and deployment of Data Warehouse solutions processing over 10 TB of data, implementing star and snowflake schemas for optimal storage and retrieval. I created dashboards in Power BI for Student Enrollment and Student Retention Rates, featuring custom KPI cards and enhanced report rendering capabilities, including drill-throughs, bookmarks, and navigation, along with row-level security. Additionally, I built a Student Performance Analysis tool to track grade trends and course completion rates, aiding academic advising and curriculum planning. I configured data gateways, scheduled and monitored report refreshes, ensured data accuracy with on-demand updates, and managed report publishing and subscriptions in Power BI Service.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="project-card bg-teal-200 shadow-md rounded-lg p-6 mb-4 w-11/12 sm:w-8/12 lg:w-10/12 slide-in-right">
+                <div class="flex items-center">
+                    <img src="WhatsApp Image 2024-10-19 at 1.03.59 PM (3).jpeg" alt="Project 2 Image" class="project-image">
+                    <div>
+                        <p class="text-gray-700">In my role, I focused on resource optimization and performance tuning by utilizing stored procedures, materialized query tables (MQT), and temporary tables to enhance data retrieval efficiency. I improved database performance by optimizing SQL queries. Additionally, I supported the creation of Cognos reports with filters, prompts, and drill-through capabilities, while also managing the content store and migrating reports to the latest Cognos version.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="w-full mt-10 py-4">
+        <div class="container mx-auto text-center text-white">
+            <p>&copy; 2024 Ridvik Mallapureddy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Include Slick JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: '<button class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+                nextArrow: '<button class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -151,6 +151,52 @@
             max-width: 90%; /* Enlarged project cards */
         }
 
+        @media (max-width: 1024px) {
+            .project-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-image {
+                margin: 0 auto 20px auto;
+                max-width: 200px;
+            }
+
+            .slider {
+                padding: 0px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .project-card {
+                max-width: 100%;
+            }
+
+            .slider .slick-arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .main-content {
+                max-width: 100%;
+            }
+
+            .project-card {
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            .slider {
+                padding: 0px 15px;
+            }
         /* Responsiveness for smaller screens */
         @media (max-width: 768px) {
             .slider .slick-arrow {
